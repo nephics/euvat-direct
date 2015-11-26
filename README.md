@@ -64,7 +64,5 @@ You can also choose to set up a [node.js CORS Proxy server](https://github.com/g
 
 ## License
 
-Copyright (c) 2015 Nephics AB, Jacob Söndergaard
-MIT License
-
-See the LICENSE file.
+Copyright (c) 2015 Nephics AB, Jacob Söndergaard.  
+MIT License (See the LICENSE file.)
