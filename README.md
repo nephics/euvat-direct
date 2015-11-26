@@ -6,7 +6,7 @@ VIES has a free [web form](http://ec.europa.eu/taxation_customs/vies/vatRequest.
 
 The VIES SOAP endpoint is [http://ec.europa.eu/taxation_customs/vies/services/checkVatService]().
 
-The CoffeeScript and JavaScript code in this repository provides a simple function that you can use to validate EU VAT numbers with VIES using SOAP, directly from your browser. [Try it out here](<a href="http://nephics.github.io/euvat-direct">). You can also [check a list of EU VAT numbers](http://nephics.github.io/euvat-direct/batch.html).
+The CoffeeScript and JavaScript code in this repository provides a simple function that you can use to validate EU VAT numbers with VIES using SOAP, directly from your browser. [Try it out here](http://nephics.github.io/euvat-direct). You can also [check a list of EU VAT numbers](http://nephics.github.io/euvat-direct/batch.html).
 
 Note this caveat: Since VIES doesn't support [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) or [JSONP](https://en.wikipedia.org/wiki/JSONP), to use the code in this repository **you need a proxy server that is CORS compliant to reach VIES from the browser**. See proxy configuration example below.
 
