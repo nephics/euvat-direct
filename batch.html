@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batch check EU VAT numbers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+</head>
+
+<body>
+  <div class="pure-g" style="margin-top: 50px">
+    <div class="pure-u-2-24"></div>
+    <div class="pure-u-20-24">
+      <h1>Batch check European VAT numbers</h1>
+
+      <p>Here you can validate a list of EU VAT numbers with VIES, directly from your browser.
+      <br>The code is open source, and available in <a href="https://github.com/nephics/euvat-direct">this GitHub repository</a>.
+      <p>If you just need to check a single VAT number, <a href="index.html">go here</a>.
+
+      <form id="batchvatform" class="pure-form pure-form-stacked">
+        <fieldset>
+          <label for="vatnos">EU VAT numbers (one per line)</label>
+          <textarea id="vatnos" type="text" cols="25" rows="15" placeholder="SE502070882101"></textarea>
+          <button type="submit" class="pure-button pure-button-primary">Check now</button>
+        </fieldset>
+      </form>
+
+      <div id="result"></div>
+      <p style="text-align: right; font-size: 80%; font-style: italic;margin-top:50px">a project by <a href="https://nephics.com">nephics</a>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="euvat-direct.js"></script>
+</body>
+</html>
