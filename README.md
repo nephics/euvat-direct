@@ -22,15 +22,15 @@ The code is tested with jQuery version v2.1.4, and Safari v9.0.1.
 
 ## Setting up a proxy
 
-Here is a simple CORS proxy server config for [nginx](http://nginx.org).
+Here is a simple CORS proxy server config for [nginx](http://nginx.org). With this configuration, the CORS proxy url is [http://proxy.example.com/vies]().
 
 ```
 server {
   listen  80;
-  server_name  proxy.yourhomepage.com;
+  server_name  proxy.example.com;
 
   location = /vies {
-    valid_referers ~^yourhomepage.com.*;
+    valid_referers ~^example.com.*;
 
     if ($invalid_referer) {
       return 403;
@@ -52,7 +52,10 @@ server {
     proxy_pass http://ec.europa.eu/taxation_customs/vies/services/checkVatService;
     proxy_pass_request_headers off;
     proxy_buffering off;
+  }
 
+  location / {
+    return 403;
   }
 }
 ```
