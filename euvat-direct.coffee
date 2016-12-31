@@ -1,6 +1,6 @@
 ###
 https://github.com/nephics/euvat-direct
-Copyright 2015 Nephics AB, Jacob Söndergaard
+Copyright 2015-2016 Nephics AB
 MIT License
 ### 
 
@@ -30,7 +30,7 @@ viesRequest = (vatno, callback) ->
   # you need a CORS proxy to reach VIES from the browser
   # your proxy shall forward POST requests to "http://ec.europa.eu/taxation_customs/vies/services/checkVatService"
   # this URL is for demo purposes only:
-  cors_proxy_url = 'http://cors-proxy.nephics.com/vies'
+  cors_proxy_url = 'https://euvat-cors-reverse-proxy.gomix.me/vies'
 
   xmlRequest = [
     '<?xml version="1.0" encoding="UTF-8"?>',
