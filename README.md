@@ -62,6 +62,10 @@ server {
 
 You can also choose to set up a [node.js CORS Proxy server](https://github.com/gr2m/CORS-Proxy).
 
+## Support
+
+Support for the software can be provided on a commercial basis, please see [www.nephics.com](https://www.nephics.com) for contact information.
+
 ## License
 
 Copyright (c) 2015-2017 Nephics AB.  
