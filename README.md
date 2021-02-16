@@ -6,11 +6,11 @@ VIES has a free [web form](https://ec.europa.eu/taxation_customs/vies/vatRequest
 
 The VIES SOAP endpoint is [https://ec.europa.eu/taxation_customs/vies/services/checkVatService]().
 
-The CoffeeScript and JavaScript code in this repository provides a simple function that you can use to validate EU VAT numbers with VIES using SOAP, directly from your browser. [Try it out here](https://nephics.github.io/euvat-direct). You can also [check a list of EU VAT numbers](https://nephics.github.io/euvat-direct/batch.html).
+The JavaScript code in this repository provides a simple function that you can use to validate EU VAT numbers with VIES using SOAP, directly from your browser. [Try it out here](https://nephics.github.io/euvat-direct). You can also [check a list of EU VAT numbers](https://nephics.github.io/euvat-direct/batch.html).
 
 Note this caveat: Since VIES doesn't support [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) or [JSONP](https://en.wikipedia.org/wiki/JSONP), to use the code in this repository **you need a proxy server that is CORS compliant to reach VIES from the browser**. See proxy configuration example below.
 
-You can grab the [CoffeeScript](https://github.com/nephics/euvat-direct/blob/master/euvat-direct.coffee) or [JavaScript](https://github.com/nephics/euvat-direct/blob/master/euvat-direct.js) code for use in your own projects. The function `viesRequest` is the important one, it sends the request and parses the response from VIES. The other code is an example implementation, used in the [demo](https://nephics.github.io/euvat-direct) [pages](https://nephics.github.io/euvat-direct/batch.html).
+You can grab the [JavaScript](https://github.com/nephics/euvat-direct/blob/master/euvat-direct.js) code for use in your own projects. The function `viesRequest` is the important one, it sends the request and parses the response from VIES. The other code is an example implementation, used in the [demo](https://nephics.github.io/euvat-direct) [pages](https://nephics.github.io/euvat-direct/batch.html).
 
 ## Requirements
 
