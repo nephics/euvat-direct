@@ -68,5 +68,5 @@ Support for the software can be provided on a commercial basis, please see [www.
 
 ## License
 
-Copyright (c) 2015-2017 Nephics AB.  
+Copyright (c) 2015-2021 Nephics AB.  
 MIT License (See the LICENSE file.)
