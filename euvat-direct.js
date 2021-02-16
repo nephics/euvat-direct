@@ -43,7 +43,12 @@ MIT License
         var el, i, len, ref, result, tag, xml;
         xml = $(xmlDoc);
         if (xml.find('checkVatResponse').length === 0) {
-          callback('invalid');
+          if (xml.find(' IP_BLOCKED').length > 0) {
+            callback('request blocked');
+          }
+          else {
+            callback('invalid');
+          }
           return;
         }
         result = {};
@@ -97,7 +102,12 @@ MIT License
     toggleSubmit();
     viesRequest(vatno, function(err, res) {
       if (err) {
-        showResult("<p>Sorry, but VIES appears to be down. (The error code is '" + err + "'.)");
+        if (err.includes('blocked')) {
+          showResult("<p>Sorry, but <strong>access to VIES is currently blocked</strong>. Contact admins at: TAXUD-VIESWEB@ec.europa.eu");
+        }
+        else {
+          showResult("<p>Sorry, but VIES appears to be down. (The error code is '" + err + "'.)");
+        }
       } else {
         showResult(["<p>The VAT number " + (res.valid ? '<strong>is' : 'is <strong>not') + " valid.</strong>", '<p>The full VAT response:', '<pre>', JSON.stringify(res, null, '  ', '</pre>')].join('\n'));
       }
@@ -178,7 +188,11 @@ MIT License
       showResult("<p>Checking " + vatno + " (" + (vatnos.length - checklist.length) + " of " + vatnos.length + ")");
       return viesRequest(vatno, function(err, res) {
         if (err) {
-          if (retry < 4) {
+          if (err.includes('blocked')) {
+            showResult("<p>Sorry, but <strong>access to VIES is currently blocked</strong>. Contact admins at: TAXUD-VIESWEB@ec.europa.eu");
+            toggleSubmit();
+          }
+          else if (retry < 4) {
             retry += 1;
             setTimeout((function() {
               return iter(vatno, fake);
