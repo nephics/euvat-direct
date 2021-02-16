@@ -204,7 +204,7 @@ MIT License
           }
         } else {
           results.push(res);
-          iter();
+          setTimeout(iter, 1000);
         }
       });
     };
