@@ -32,7 +32,7 @@ MIT License
        address:     string with company address (if available)
      */
     var cors_proxy_url, xmlRequest;
-    cors_proxy_url = 'https://euvat-cors-reverse-proxy.glitch.me/vies';
+    cors_proxy_url = 'https://cors.bridged.cc/https://ec.europa.eu/taxation_customs/vies/services/checkVatService';
     xmlRequest = ['<?xml version="1.0" encoding="UTF-8"?>', '<SOAP-ENV:Envelope xmlns:ns0="urn:ec.europa.eu:taxud:vies:services:checkVat:types" ', 'xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" ', 'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ', 'xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">', '<SOAP-ENV:Header/><ns1:Body><ns0:checkVat>', '<ns0:countryCode>', vatno.slice(0, 2).toUpperCase(), '</ns0:countryCode><ns0:vatNumber>', vatno.slice(2), '</ns0:vatNumber></ns0:checkVat></ns1:Body></SOAP-ENV:Envelope>'].join('');
     $.ajax({
       url: cors_proxy_url,
